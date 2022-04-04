@@ -46,18 +46,47 @@ const users = [
   }
 ];
 
+
 /**
  * 1. Afficher les noms et les numéros de téléphone dans la console.
  */
+users.forEach(user => {
+  console.log(`${user.name} ${user.phone}`); // Concaténation
+  // console.log(user.name, user.phone);
+});
+// for (let i = 0; i < users.length; i++) {
+//  console.log(users[i]["name"] + ", " + users[i]["phone"]);
+// }
 
-
-
+// const listing = users.map()
 /**
  * 2. Afficher les informations de l'utilisateur ayant cet ID : 6249d07225e39f1d9520db2a
  */
 
+users.forEach(user => {
+  if (user._id === "6249d07225e39f1d9520db2a") {
+    console.log(user);
+  }
+});
+
+/* for (let i = 0; i < users.length; i++) {
+  if (users[i]["_id"] === "6249d07225e39f1d9520db2a") {
+  console.log(users[i]);
+  }
+} */
 
 
 /**
  * 3. Trouver les années de naissances de chaque utilisateur.
  */
+
+const currentYear = new Date().getFullYear();
+users.forEach(user => {
+  const birthday = currentYear - user.age;
+  console.log(birthday);
+});
+
+
+const dateNow = Date.now();
+const date = new Date(dateNow);
+console.log(date.getHours(), date.getUTCDate(), date.getUTCSeconds());
